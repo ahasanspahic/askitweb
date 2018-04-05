@@ -8,7 +8,8 @@ var config = {
     devServer: {
        inline: true,
        port: process.env.PORT || 8080,
-       historyApiFallback: true
+       historyApiFallback: true,
+	   public: 'askitweb.herokuapp.com'
     },
     module: {
        rules: [
