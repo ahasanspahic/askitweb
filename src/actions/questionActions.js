@@ -98,6 +98,7 @@ export function addAnswer(text,questionId,token) {
       dispatch(getQuestionDetails(questionId));
     })
     .catch((err) => {
+      console.log(err);
       dispatch({type: "ADD_ANSWER_FAILED", payload: err.response.data.message})
     })
   }

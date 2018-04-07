@@ -4,6 +4,11 @@ const url = PRODUCTION_LIKE_API;
 
 export function fetchUser() {
   let user = JSON.parse(sessionStorage.getItem('user'));
+  /* There is a strong discussion whether the token should be kept in storage or cookie.
+  With cookie there is a danger of CSRF, and with storage of XSS. 
+  But, if the XSS is occured, and server protects the server and database, there is little to no harm done. 
+  So for now, token goes into the storage, and from there into the state to speed POC/MVP development. 
+  NO SENSITIVE DATA MUST EVER BE STORED INTO TOKEN*/
   if(user){
     return {
       type: "FETCH_USER",
